@@ -273,3 +273,17 @@ private static final String LOGIN_URL = "https://account.xiaomi.com/pass/service
         }
     }
 }
+$ cat uri.patch
+diff --git a/src/main/java/com/xiaomitool/v2/gui/controller/LoginController.java b/src/main/java/com/xiaomitool/v2/gui/controller/LoginController.java
+index c90bb86..d41bcd7 100644
+--- a/src/main/java/com/xiaomitool/v2/gui/controller/LoginController.java
++++ b/src/main/java/com/xiaomitool/v2/gui/controller/LoginController.java
+@@ -36,7 +36,7 @@ import java.net.URI;
+ import java.util.Locale;
+
+ public class LoginController extends DefaultController {
+-    private static final String LOGIN_URL = "https://account.xiaomi.com/pass/serviceLogin?sid=passport&json=false&passive=true&hidden=false&_snsDefault=facebook&_locale=" + Locale.getDefault().getLanguage().toLowerCase();
++    private static final String LOGIN_URL = "https://account.xiaomi.com/pass/serviceLogin?sid=unlockApi&json=false&passive=true&hidden=false&_snsDefault=facebook&checkSafePhone=true&_locale=" + Locale.getDefault().getLanguage().toLowerCase();
+     private static boolean loggedIn = false;
+     private static Thread loginThread = null;
+     @FXML
